@@ -3,11 +3,11 @@
     <img class="heading__logo" alt="App logo, word icons" src="./assets/scrabble.png">
     <h1 class="heading__title">Word Scorer</h1>
   </div>
-
   <div class="content">
     <TabsWrapper>
       <SimpleTab title="Add New Word">
-        Input word will coming here
+        <InputScreen>
+        </InputScreen>
       </SimpleTab>
       <SimpleTab title="Word Score Table">Scores table coming here</SimpleTab>
     </TabsWrapper>
@@ -23,6 +23,7 @@
 <script setup>
 import TabsWrapper from './components/TabsWrapper.vue';
 import SimpleTab from './components/SimpleTab.vue';
+import InputScreen from './screens/InputScreen.vue';
 
 </script>
 
@@ -33,10 +34,15 @@ import SimpleTab from './components/SimpleTab.vue';
   --color-accent-1: #FFCC80;
   --color-accent-2: #FFAC91;
 
+  --color-accent-3: #f5b659;
+  --color-accent-4: #e2653c;
+
   --color-white: #fff;
   --color-black: #000;
 
   --color-grey: #ddd;
+
+  --shadow: 0 .5rem 1rem 2rem rgba(#000, 0.1);
 }
 
 * {

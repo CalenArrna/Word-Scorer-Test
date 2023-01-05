@@ -17,6 +17,6 @@ const selectedTitle = inject("selectedTitle");
     min-height: 40rem;
     padding: 2rem;
     border-radius: .5rem;
-    box-shadow: 0 .5rem 1rem 2rem rgba(#000, 0.1);
+    box-shadow: var(--shadow);
 }
 </style>

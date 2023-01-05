@@ -1,0 +1,37 @@
+<template>
+    <h1 class="display-title">Recently submitted three words:</h1>
+    <div class="display-box">
+        <span class="display-box__item" v-for="word in list" :key="word"> {{ word }}</span>
+    </div>
+</template>
+
+<script setup>
+
+//TODO: get data from bussiness logic!
+const list = ["cica", "kutya", "kejgyó"];
+
+</script>
+
+<style scoped>
+.display-title {
+    margin: 2rem 0;
+    font-size: 2.1rem;
+    font-weight: 800;
+}
+
+.display-box {
+    margin: 0 auto;
+    max-width: 80%;
+    padding: 2rem;
+    background-color: var(--color-grey);
+}
+
+.display-box__item {
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.display-box__item:not(:last-child) {
+    margin-right: 1rem;
+}
+</style>
