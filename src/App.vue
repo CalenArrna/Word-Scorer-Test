@@ -9,7 +9,9 @@
         <InputScreen>
         </InputScreen>
       </SimpleTab>
-      <SimpleTab title="Word Score Table">Scores table coming here</SimpleTab>
+      <SimpleTab title="Word Score Table">
+        <ScoresScreen />
+      </SimpleTab>
     </TabsWrapper>
   </div>
   <div class="footer">
@@ -24,6 +26,7 @@
 import TabsWrapper from './components/TabsWrapper.vue';
 import SimpleTab from './components/SimpleTab.vue';
 import InputScreen from './screens/InputScreen.vue';
+import ScoresScreen from './screens/ScoresScreen.vue';
 
 </script>
 
@@ -73,6 +76,8 @@ html {
 
 .heading {
   margin-bottom: 3rem;
+  color: var(--color-accent-2);
+
 }
 
 .heading__logo {
