@@ -22,14 +22,16 @@ import { validate } from "../composables/validation.js";
 
 const word = ref("");
 const errors = ref([]);
+var errorLength = ref(errors.value.length);
 
 const isVisible = computed(() => {
-    return errors.value.length > 0;
+    return errorLength.value > 0;
 });
 
 const submit = () => {
     errors.value = validate(word.value);
-    const isValid = errors.value.length < 1;
+    errorLength.value = errors.value.length;
+    const isValid = errorLength.value < 1;
 
     if (isValid) {
         storeWord(word.value);
@@ -41,23 +43,24 @@ const submit = () => {
 
 <style scoped>
 .word {
-    height: 80rem;
+    max-height: 80rem;
 }
 
 .word__label {
     display: block;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: 400;
 }
 
 .word__input {
-    height: 3rem;
-    width: 50rem;
+    height: 3.5rem;
+    width: 70rem;
+    font-size: 1.8rem;
 }
 
 .feedback {
     color: var(--color-red);
-    font-size: 1rem;
+    font-size: 1.6rem;
 }
 
 .word__button {
