@@ -45,6 +45,8 @@ import ScoresScreen from './screens/ScoresScreen.vue';
 
   --color-grey: #ddd;
 
+  --color-red: rgb(207, 22, 22);
+
   --shadow: 0 .5rem 1rem 2rem rgba(#000, 0.1);
 }
 
