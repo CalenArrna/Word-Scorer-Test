@@ -15,7 +15,6 @@ const list = getLastThreeWords();
 const isVisible = computed(() => {
     return list.value.length > 0;
 });
-
 </script>
 
 <style scoped>

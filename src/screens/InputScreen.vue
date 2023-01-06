@@ -31,14 +31,12 @@ const submit = () => {
     errors.value = validate(word.value);
     const isValid = errors.value.length < 1;
 
-    console.log(errors.value);
     if (isValid) {
         storeWord(word.value);
         word.value = "";
         alert("Word saved succesfully!");
     }
 }
-
 </script>
 
 <style scoped>
