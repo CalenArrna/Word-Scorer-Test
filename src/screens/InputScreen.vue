@@ -10,14 +10,16 @@
 <script setup>
 import BaseButton from "@/components/BaseButton.vue";
 import { ref } from "vue";
-import WordDisplay from "@/components/WordDisplay.vue"
+import WordDisplay from "@/components/WordDisplay.vue";
+import { storeWord } from "../composables/wordScore.js";
 
 
 const word = ref("");
 
 const submit = () => {
-    //TODO: implement submit logic with validation
-    console.log("I am clicked");
+    //TODO: implement validation
+    storeWord(word.value);
+    word.value = "";
 }
 
 </script>

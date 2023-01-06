@@ -1,5 +1,6 @@
 <template>
     <div class="scores">
+        <h1> Total score: {{ totalScore }}</h1>
         <table class="scores-table">
             <tr class="scores-table__heading">
                 <th>Word</th>
@@ -14,17 +15,10 @@
 </template>
 
 <script setup>
-const listOfWords = [
-    { word: "cica", score: 4 },
-    { word: "kugya", score: 5 },
-    { word: "gígyó", score: 5 },
-    { word: "kugadsadaya", score: 5 },
-    { word: "gígyóasdasdasdad", score: 5 },
-    { word: "kugya", score: 5 },
-    { word: "gíasdadasdagyó", score: 5 },
-    { word: "kugya", score: 5 },
-    { word: "gíasdasdagyó", score: 5 }
-];
+import { getAllScore, getAllWords } from "../composables/wordScore.js";
+
+const listOfWords = getAllWords();
+const totalScore = getAllScore();
 </script>
 
 <style scoped>
@@ -32,9 +26,12 @@ const listOfWords = [
     width: 100%;
     font-size: 2rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
+
 
 .scores-table {
     box-shadow: var(--shadow);

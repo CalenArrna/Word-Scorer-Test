@@ -1,14 +1,20 @@
 <template>
-    <h1 class="display-title">Recently submitted three words:</h1>
-    <div class="display-box">
-        <span class="display-box__item" v-for="word in list" :key="word"> {{ word }}</span>
+    <div v-show="isVisible">
+        <h1 class="display-title">Recently submitted three words:</h1>
+        <div class="display-box">
+            <span class="display-box__item" v-for="word in list" :key="word"> {{ word.word }}</span>
+        </div>
     </div>
 </template>
 
 <script setup>
+import { computed } from "vue";
+import { getLastThreeWords } from "../composables/wordScore.js";
 
-//TODO: get data from bussiness logic!
-const list = ["cica", "kutya", "kejgyó"];
+const list = getLastThreeWords();
+const isVisible = computed(() => {
+    return list.value.length > 0;
+});
 
 </script>
 
